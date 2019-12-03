@@ -14,7 +14,7 @@ var (
 	wg4Download sync.WaitGroup
 
 	//图片存储地址
-	imgDir = `D:\BJBlockChain1803\demos\W4\day5\imgs\`
+	imgDir = `C:\Users\75515\Desktop\爬虫演示\`
 )
 
 func main() {
@@ -29,7 +29,7 @@ func main() {
 
 		wg4Imginfo.Add(1)
 		go func(theUrl string) {
-			spiderkit.GetPageImginfos2Chan(theUrl,chImgMaps)
+			spiderkit.GetPageImginfos2Chan(theUrl,imgDir,chImgMaps)
 			wg4Imginfo.Done()
 		}(url)
 	}
